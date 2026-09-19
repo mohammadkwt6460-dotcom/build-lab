@@ -1,1 +1,87 @@
-
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BUILD LAB V6 — Kuwait PC Builder</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&display=swap');
+:root{--bg:#060711;--panel:#0d1020;--panel2:#12162a;--line:#ffffff12;--txt:#f6f7ff;--muted:#8992ad;--cyan:#00e5ff;--violet:#8b5cf6;--green:#39f5a5;--pink:#ff4f88;--yellow:#ffd166}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0,#21145a 0,transparent 32%),radial-gradient(circle at 90% 10%,#063a46 0,transparent 28%),var(--bg);color:var(--txt);font-family:Cairo,Arial,sans-serif;min-height:100vh}
+.wrap{max-width:1220px;margin:auto;padding:20px}.top{display:flex;justify-content:space-between;align-items:center;padding:10px 0 22px}.brand{font-size:25px;font-weight:900}.brand b{color:var(--cyan);text-shadow:0 0 25px #00e5ff66}.pill{font-size:11px;color:#b8c1d9;border:1px solid var(--line);padding:7px 12px;border-radius:999px;background:#ffffff06}
+.hero{padding:30px 0}.hero h1{font-size:clamp(40px,7vw,78px);line-height:.98;margin:0;font-weight:900}.hero h1 span{color:var(--cyan);text-shadow:0 0 30px #00e5ff55}.hero p{color:var(--muted);max-width:760px}
+.layout{display:grid;grid-template-columns:380px 1fr;gap:18px}.card{background:linear-gradient(145deg,#11162aee,#090b15ee);border:1px solid var(--line);border-radius:23px;padding:20px;box-shadow:0 25px 80px #0009;backdrop-filter:blur(12px)}
+h2{font-size:18px;margin:0 0 15px}label{font-size:12px;color:#cdd4e8;display:block;margin:14px 0 7px}input,select{width:100%;padding:13px;border-radius:12px;border:1px solid var(--line);background:#080a13;color:#fff;font:inherit;outline:none}input:focus,select:focus{border-color:#00e5ff66}
+.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{cursor:pointer;padding:9px 11px;border-radius:11px;background:#ffffff06;border:1px solid var(--line);color:#b9c2da;font-size:12px}.chip.active{color:#fff;border-color:#00e5ff66;background:#00e5ff10}
+button{font-family:inherit;cursor:pointer}.build{width:100%;border:0;padding:15px;border-radius:14px;margin-top:18px;font-weight:900;font-size:15px;background:linear-gradient(90deg,var(--cyan),var(--violet));color:#04050a;box-shadow:0 0 35px #00e5ff22}.tools{display:flex;gap:8px;margin-top:10px}.tools button{flex:1;padding:10px;border:1px solid var(--line);border-radius:11px;background:#ffffff06;color:#d7dcef}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:13px}.stat{background:#ffffff06;border:1px solid var(--line);border-radius:14px;padding:12px}.stat small{display:block;color:var(--muted);font-size:10px}.stat strong{font-size:17px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.toolbar input{flex:1;min-width:180px}.toolbar select{width:auto;min-width:140px}
+.parts{display:grid;grid-template-columns:1fr 1fr;gap:9px}.part{padding:13px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(90deg,#ffffff06,#ffffff02);display:flex;justify-content:space-between;gap:12px;align-items:center}.part small{display:block;color:var(--muted);font-size:10px}.price{font-weight:900;color:var(--green);white-space:nowrap}.store{font-size:9px;color:#9da8c7}
+.compat{margin-top:12px;padding:12px;border-radius:13px;border:1px solid #39f5a533;background:#39f5a50b;color:#bdf9df;font-size:12px}.warn{border-color:#ffd16644;background:#ffd1660b;color:#ffe4a3}.bad{border-color:#ff4f8844;background:#ff4f880b;color:#ffc1d1}
+.compare{margin-top:18px}.compareGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.compareBox{padding:14px;border:1px solid var(--line);border-radius:14px;background:#ffffff05}.compareBox h3{margin:0 0 8px;font-size:14px}.compareBox div{font-size:11px;color:#b8c1d9;margin:4px 0}.compareBox b{color:#fff}
+.note{font-size:10px;line-height:1.8;color:#717b96;margin-top:12px}footer{text-align:center;color:#606a84;font-size:10px;padding:28px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.parts{grid-template-columns:1fr}}@media(max-width:520px){.wrap{padding:13px}.summary{grid-template-columns:1fr 1fr}.hero h1{font-size:47px}.top .pill{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">⚡ <b>BUILD</b> LAB <span style="color:#707995">V6</span></div><div class="pill">🇰🇼 KUWAIT PC BUILDER</div></header>
+<section class="hero"><h1>BUILD YOUR <span>BEAST.</span></h1><p>نسخة V6: ميزانية، ألعاب، دقة، بحث وفلترة، مقارنة، حفظ التجميعة، وأسعار مرجعية كويتية. صممتها كقاعدة قوية تقدر تطورها لاحقًا إلى موقع حقيقي.</p></section>
+<div class="layout">
+<aside class="card">
+<h2>🎯 CONFIGURATOR</h2>
+<label>الميزانية — د.ك</label><input id="budget" type="number" min="150" value="500">
+<label>الاستخدام</label><div class="chips" id="use"><span class="chip active" data-v="gaming">Gaming</span><span class="chip" data-v="stream">Gaming + Streaming</span></div>
+<label>الدقة</label><div class="chips" id="res"><span class="chip active" data-v="1080">1080p</span><span class="chip" data-v="1440">1440p</span><span class="chip" data-v="4k">4K</span></div>
+<label>اللعبة</label><select id="game"><option>Fortnite</option><option>Valorant</option><option>GTA V</option><option>Warzone</option><option>Minecraft</option><option>ألعاب متنوعة</option></select>
+<button class="build" onclick="build()">⚡ BUILD MY PC</button>
+<div class="tools"><button onclick="saveBuild()">💾 حفظ</button><button onclick="loadBuild()">↻ استرجاع</button></div>
+<p class="note">الأسعار داخل النسخة بيانات مرجعية ثابتة وليست اتصالًا مباشرًا بواجهات المتاجر. راجع المتجر قبل الشراء.</p>
+</aside>
+<main class="card">
+<h2>🧬 YOUR BUILD</h2>
+<div id="empty" style="text-align:center;color:#7c86a1;padding:55px 10px">اضغط BUILD MY PC حتى نبني لك التجميعة.</div>
+<div id="result" style="display:none">
+<div class="summary"><div class="stat"><small>الإجمالي</small><strong id="total">—</strong></div><div class="stat"><small>المتبقي</small><strong id="remain">—</strong></div><div class="stat"><small>المستوى</small><strong id="level">—</strong></div><div class="stat"><small>اللعبة</small><strong id="gameOut">—</strong></div></div>
+<div class="toolbar"><input id="search" placeholder="🔎 ابحث عن قطعة..." oninput="renderParts()"><select id="filter" onchange="renderParts()"><option value="all">كل القطع</option><option value="gpu">GPU</option><option value="cpu">CPU</option><option value="ram">RAM</option><option value="storage">Storage</option><option value="other">Other</option></select></div>
+<div class="parts" id="parts"></div>
+<div id="compat" class="compat">✓ التوافق الأساسي مناسب.</div>
+<div class="compare"><h2>⚖️ COMPARE</h2><div class="compareGrid"><div class="compareBox" id="c1"><h3>Build A</h3><div>ابنِ التجميعة أولًا.</div></div><div class="compareBox" id="c2"><h3>Build B</h3><div>احفظ تجميعة ثانية للمقارنة.</div></div></div></div>
+<p class="note">مصادر مرجعية راجعتها عند إعداد V6: Next Store Kuwait وAX Store Kuwait. صفحات المتاجر تعرض أسعارًا ومخزونًا يتغيران بمرور الوقت؛ لذلك لا يعرض هذا الملف سعرًا لحظيًا أو يضمن التوفر. citeturn0search0turn0search7</p>
+</div>
+</main></div>
+<footer>BUILD LAB V6 • Learning / Portfolio Project 🚀</footer>
+</div>
+<script>
+const catalog=[
+['cpu','CPU','AMD Ryzen 5 5600',55],['cpu','CPU','AMD Ryzen 5 7600',65],['cpu','CPU','AMD Ryzen 7 7800X3D',125],
+['gpu','GPU','Radeon RX 6600 8GB',85],['gpu','GPU','GeForce RTX 5060 8GB',169],['gpu','GPU','Palit RTX 5060 Ti 16GB',278],['gpu','GPU','Palit RTX 5070 12GB',300],['gpu','GPU','Colorful RTX 5080 16GB',681],
+['ram','RAM','16GB DDR4 3200MHz',42],['ram','RAM','32GB DDR5',55],['storage','Storage','1TB NVMe SSD',25],['storage','Storage','2TB NVMe SSD',55],
+['other','Motherboard','B550 Motherboard',32],['other','Motherboard','B650 Wi-Fi Motherboard',45],['other','PSU','650W 80+ Bronze',28],['other','PSU','750W 80+ Gold',48],['other','Case','Aigo DarkFlash DS900W + 7 ARGB Fans',30]
+];
+let use='gaming',res='1080',current=[],last=null;
+const el=id=>document.getElementById(id);
+document.querySelectorAll('#use .chip').forEach(x=>x.onclick=()=>{document.querySelectorAll('#use .chip').forEach(y=>y.classList.remove('active'));x.classList.add('active');use=x.dataset.v});
+document.querySelectorAll('#res .chip').forEach(x=>x.onclick=()=>{document.querySelectorAll('#res .chip').forEach(y=>y.classList.remove('active'));x.classList.add('active');res=x.dataset.v});
+function choose(b){if(b<300)return 0;if(b<500)return 1;return 2}
+const builds=[
+[['CPU','AMD Ryzen 5 5600',55],['GPU','Radeon RX 6600 8GB',85],['RAM','16GB DDR4 3200MHz',42],['Storage','1TB NVMe SSD',25],['Motherboard','B550 Motherboard',32],['PSU','650W 80+ Bronze',28],['Case','Aigo DarkFlash DS900W + 7 ARGB Fans',30]],
+[['CPU','AMD Ryzen 5 7600',65],['GPU','GeForce RTX 5060 8GB',169],['RAM','32GB DDR5',55],['Storage','1TB NVMe SSD',25],['Motherboard','B650 Wi-Fi Motherboard',45],['PSU','650W 80+ Bronze',28],['Case','Aigo DarkFlash DS900W + 7 ARGB Fans',30]],
+[['CPU','AMD Ryzen 7 7800X3D',125],['GPU','Palit RTX 5070 12GB',300],['RAM','32GB DDR5',55],['Storage','2TB NVMe SSD',55],['Motherboard','B650 Wi-Fi Motherboard',45],['PSU','750W 80+ Gold',48],['Case','Aigo DarkFlash DS900W + 7 ARGB Fans',30]]
+];
+function build(){
+ let b=+el('budget').value||0, idx=choose(b); if(res==='4k'&&b>=500)idx=2;
+ current=builds[idx].map(x=>({cat:x[0].toLowerCase().includes('gpu')?'gpu':x[0].toLowerCase().includes('cpu')?'cpu':x[0].toLowerCase().includes('ram')?'ram':x[0].toLowerCase().includes('storage')?'storage':'other',type:x[0],name:x[1],price:x[2]}));
+ if(use==='stream'&&idx===0) current[0]={cat:'cpu',type:'CPU',name:'AMD Ryzen 7 5700X',price:75};
+ last={budget:b,idx}; el('empty').style.display='none';el('result').style.display='block';el('level').textContent=['Starter','Balanced','High-End'][idx];el('gameOut').textContent=el('game').value;renderParts();updateSummary();check();
+}
+function renderParts(){
+ let q=(el('search').value||'').toLowerCase(),f=el('filter').value;
+ let arr=current.filter(x=>(f==='all'||x.cat===f)&&(!q||x.name.toLowerCase().includes(q)));
+ el('parts').innerHTML=arr.map(x=>`<div class="part"><div><b>${x.type}</b><small>${x.name}</small><span class="store">سعر مرجعي</span></div><span class="price">${x.price.toFixed(3)} د.ك</span></div>`).join('')||'<div style="color:#7c86a1;padding:15px">ما لقينا قطع تطابق البحث.</div>';
+}
+function updateSummary(){let t=current.reduce((s,x)=>s+x.price,0),b=+el('budget').value||0;el('total').textContent=t.toFixed(3)+' د.ك';el('remain').textContent=(b-t).toFixed(3)+' د.ك'}
+function check(){let b=+el('budget').value||0,t=current.reduce((s,x)=>s+x.price,0),c=el('compat');if(t>b){c.className='compat bad';c.textContent='⚠️ التجميعة تتجاوز الميزانية. قلل الميزانية؟ لا — زِد الميزانية أو اختر مستوى أقل.'}else if(res==='4k'&&b<500){c.className='compat warn';c.textContent='⚠️ 4K يحتاج ميزانية أعلى عادةً؛ هذه الصفحة لا تضمن FPS محدد.'}else{c.className='compat';c.textContent='✓ التوافق الأساسي مناسب كاقتراح. تحقق من المقاسات والـsocket والطاقة قبل الشراء.'}}
+function saveBuild(){if(!current.length){build()}localStorage.setItem('buildlabV6',JSON.stringify({budget:+el('budget').value,use,res,game:el('game').value,current}));let old=JSON.parse(localStorage.getItem('buildlabSlots')||'[]');old.push({time:new Date().toLocaleString(),current,budget:+el('budget').value});localStorage.setItem('buildlabSlots',JSON.stringify(old.slice(-5)));alert('تم حفظ التجميعة محليًا ✅')}
+function loadBuild(){let x=JSON.parse(localStorage.getItem('buildlabV6')||'null');if(!x){alert('ما عندك تجميعة محفوظة بعد.');return}el('budget').value=x.budget;el('game').value=x.game;use=x.use;res=x.res;current=x.current;el('empty').style.display='none';el('result').style.display='block';el('level').textContent='Saved';el('gameOut').textContent=x.game;renderParts();updateSummary();check()}
+</script>
+</body></html>
